@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Studocu Pro Downloader - By Dat</title>
+  <title>Studocu Pro Hub - Human Resources Personal Brand</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <script>
@@ -19,56 +19,96 @@
       border: 1px solid rgba(255, 255, 255, 0.08);
     }
     .glow { box-shadow: 0 0 40px -10px rgba(99, 102, 241, 0.3); }
+    .bookmark-btn {
+      background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+      transition: all 0.3s ease;
+    }
+    .bookmark-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.5);
+    }
   </style>
 </head>
 <body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col justify-between selection:bg-indigo-500 selection:text-white relative">
 
-  <!-- Header -->
-  <header class="max-w-4xl mx-auto w-full px-6 py-6 flex items-center justify-between">
+  <!-- Background Ambient Glow -->
+  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+    <div class="absolute top-[-10%] left-[20%] w-[400px] h-[400px] bg-indigo-600/15 rounded-full blur-[100px]"></div>
+    <div class="absolute bottom-[-10%] right-[20%] w-[400px] h-[400px] bg-purple-600/15 rounded-full blur-[100px]"></div>
+  </div>
+
+  <!-- Header Cá Nhân Hóa -->
+  <header class="relative z-10 max-w-5xl mx-auto w-full px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 border-b border-slate-900/80">
     <div class="flex items-center gap-3">
-      <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-indigo-500 to-purple-500 flex items-center justify-center shadow-lg shadow-indigo-500/30">
+      <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-indigo-500 to-purple-500 flex items-center justify-center shadow-lg shadow-indigo-500/30">
         <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
       </div>
       <div>
-        <span class="font-extrabold text-lg tracking-tight block text-white">Studocu<span class="text-indigo-400">PRO</span></span>
-        <span class="text-[10px] text-slate-400 font-medium">Developed by <span class="text-indigo-300 font-bold">Dat</span></span>
+        <span class="font-extrabold text-base tracking-tight block text-white">Human Resources <span class="text-indigo-400">Personal Brand</span></span>
+        <span class="text-[11px] text-slate-400 font-medium">Official Tool Hub • nhattu.vercel.app</span>
       </div>
     </div>
-    <span class="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold flex items-center gap-1.5">
-      <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Hệ thống sẵn sàng
-    </span>
+    
+    <!-- Thông tin liên hệ nhanh trên Header -->
+    <div class="flex items-center gap-3 text-xs text-slate-300 bg-slate-900/90 px-4 py-2 rounded-xl border border-slate-800">
+      <span class="flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg> 0976431445</span>
+      <span class="text-slate-700">|</span>
+      <span class="flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg> Thanh Khe, Da Nang</span>
+    </div>
   </header>
 
-  <!-- Main -->
-  <main class="max-w-xl mx-auto px-6 py-12 text-center flex-grow flex flex-col justify-center w-full">
-    <h1 class="text-3xl sm:text-4xl font-black tracking-tight mb-4">
-      Trợ Thủ Tải Tài Liệu <span class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-purple-400">Studocu</span>
+  <!-- Main Content -->
+  <main class="relative z-10 max-w-2xl mx-auto px-6 py-12 text-center flex-grow flex flex-col justify-center w-full">
+    
+    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-xs font-semibold mb-6 mx-auto">
+      <span class="w-2 h-2 rounded-full bg-indigo-400 animate-pulse"></span>
+      Công cụ hỗ trợ học tập & tài liệu thông minh
+    </div>
+
+    <h1 class="text-3xl sm:text-5xl font-black tracking-tight mb-4 leading-tight">
+      Trợ Thủ Tải Tài Liệu <br/>
+      <span class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">
+        Studocu Pro Max
+      </span>
     </h1>
-    <p class="text-slate-400 text-sm mb-8">
-      Giải pháp tối ưu giúp bạn làm sạch giao diện và xuất file PDF mượt mà.
+    <p class="text-slate-400 text-sm sm:text-base mb-10 max-w-lg mx-auto">
+      Giải pháp tối ưu giúp vượt rào cản mờ tài liệu, xóa watermark và xuất file PDF chuẩn nét chỉ trong nháy mắt.
     </p>
 
-    <div class="glass rounded-3xl p-6 glow text-left space-y-4">
-      <p class="text-xs text-slate-300 font-semibold uppercase tracking-wider">Cách sử dụng siêu đơn giản:</p>
-      <ol class="text-xs text-slate-400 space-y-2 list-decimal list-inside">
-        <li>Mở trang tài liệu Studocu cần tải.</li>
-        <li>Kéo nút màu tím bên dưới lên thanh Bookmark (dấu trang) của trình duyệt.</li>
-        <li>Click vào nút trên thanh Bookmark khi đang ở trang Studocu, tool sẽ tự động cuộn load toàn bộ và bật bảng lưu PDF!</li>
+    <!-- Card Hướng Dẫn & Kéo Bookmarklet -->
+    <div class="glass rounded-3xl p-6 sm:p-8 glow text-left space-y-6">
+      <div class="border-b border-slate-800 pb-4">
+        <h3 class="text-sm font-bold text-white uppercase tracking-wider mb-1">Hướng Dẫn Sử Dụng Siêu Tốc:</h3>
+        <p class="text-xs text-slate-400">Không cần cài đặt phức tạp, sử dụng trực tiếp trên trình duyệt.</p>
+      </div>
+
+      <ol class="text-xs text-slate-300 space-y-3 list-decimal list-inside leading-relaxed">
+        <li>Mở trang tài liệu <strong class="text-indigo-400">Studocu</strong> mà bạn muốn tải về.</li>
+        <li>Kéo giữ nút màu tím bên dưới thả lên **Thanh Bookmark (Bookmarks Bar)** của trình duyệt.</li>
+        <li>Click vào Bookmark vừa tạo khi đang ở trang Studocu, tool sẽ tự động cuộn load toàn bộ trang và bật bảng in PDF cho bạn!</li>
       </ol>
 
-      <div class="pt-4 text-center">
-        <!-- Bookmarklet tự động cuộn và gom trang thông minh -->
-        <a href="javascript:(function(){alert('⚡ Đang tự động cuộn trang để tải toàn bộ tài liệu, vui lòng đợi trong giây lát...');let totalHeight=0;let distance=500;let timer=setInterval(()=>{window.scrollBy(0,distance);totalHeight+=distance;if(totalHeight>=document.body.scrollHeight){clearInterval(timer);setTimeout(()=>{window.scrollTo(0,0);const pages=document.querySelectorAll('div[data-page-index]');if(pages.length===0){alert('⚠️ Không tìm thấy trang tài liệu nào!');return;}if(confirm('🎉 Đã tải xong '+pages.length+' trang.\nBấm OK để mở giao diện lưu PDF!')){window.print();}},1000);}},200);})();" 
-           class="inline-block w-full py-4 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-bold text-sm shadow-lg shadow-indigo-600/30 text-center transition-all cursor-grab">
-          ⭐ Kéo tôi lên thanh Bookmark trình duyệt
+      <div class="pt-2">
+        <!-- Nút Bookmarklet chứa code xử lý đã được tối ưu mượt mà -->
+        <a href="javascript:(function(){alert('⚡ Đang tự động cuộn trang để tải toàn bộ tài liệu, vui lòng đợi trong giây lát...');let totalHeight=0;let distance=600;let timer=setInterval(()=>{window.scrollBy(0,distance);totalHeight+=distance;if(totalHeight>=document.body.scrollHeight){clearInterval(timer);setTimeout(()=>{window.scrollTo(0,0);const pages=document.querySelectorAll('div[data-page-index]');if(pages.length===0){alert('⚠️ Không tìm thấy trang tài liệu!');return;}if(confirm('🎉 Đã tải xong '+pages.length+' trang.\nBấm OK để mở giao diện lưu PDF!')){window.print();}},1200);}},200);})();" 
+           class="bookmark-btn inline-block w-full py-4 px-6 rounded-2xl text-white font-bold text-sm text-center shadow-lg cursor-grab active:cursor-grabbing">
+          ⭐ [Kéo tôi lên thanh Bookmark] - Studocu Tool
         </a>
       </div>
     </div>
   </main>
 
-  <!-- Footer -->
-  <footer class="max-w-4xl mx-auto w-full px-6 py-6 text-center text-xs text-slate-500 border-t border-slate-900">
-    <p>Crafted with <span class="text-rose-500">❤</span> by <span class="text-slate-300 font-bold">Dat</span></p>
+  <!-- Footer Cá Nhân Hóa Đầy Đủ Thông Tin -->
+  <footer class="relative z-10 max-w-5xl mx-auto w-full px-6 py-6 text-center text-xs text-slate-500 border-t border-slate-900/80 space-y-2">
+    <p class="font-medium text-slate-400">
+      Developed with <span class="text-rose-500">❤</span> by <strong class="text-indigo-400">Human Resources Personal Brand</strong>
+    </p>
+    <div class="flex flex-wrap justify-center items-center gap-4 text-slate-400">
+      <span>📧 Email: <a href="mailto:giadinh242004@gmail.com" class="text-indigo-300 hover:underline">giadinh242004@gmail.com</a></span>
+      <span>📞 Hotline: <a href="tel:0976431445" class="text-indigo-300 hover:underline">0976431445</a></span>
+      <span>📍 Địa chỉ: Thanh Khe, Da Nang</span>
+    </div>
+    <p class="text-[10px] text-slate-600 pt-1">© 2026 nhattu.vercel.app. All rights reserved.</p>
   </footer>
 
 </body>
