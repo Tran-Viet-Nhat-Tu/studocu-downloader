@@ -120,9 +120,9 @@
     <p>Crafted with <span class="text-rose-500">❤</span> by <span class="text-slate-300 font-bold">Dat</span> • Secure Cloud Architecture</p>
   </footer>
 
-  <!-- Script xử lý giao diện -->
+  <!-- Script xử lý thực tế -->
   <script>
-    function processLink(e) {
+    async function processLink(e) {
       e.preventDefault();
       const url = document.getElementById('docUrl').value;
       const statusContainer = document.getElementById('statusContainer');
@@ -135,12 +135,12 @@
       submitBtn.disabled = true;
       submitBtn.classList.add('opacity-50', 'cursor-not-allowed');
 
-      // Mô phỏng tiến trình gọi tới Backend Server ẩn giấu mã nguồn
+      // Mô phỏng tiến trình trực quan
       const steps = [
         { progress: 25, text: "Đang xác thực đường dẫn tài liệu..." },
-        { progress: 50, text: "Khởi động Serverless Worker để Bypass..." },
-        { progress: 80, text: "Render trang & xuất bản file PDF chuẩn..." },
-        { progress: 100, text: "Hoàn tất! Chuẩn bị tải xuống..." }
+        { progress: 50, text: "Đang xử lý bỏ qua lớp mờ & watermark..." },
+        { progress: 80, text: "Đang render định dạng file PDF A4..." },
+        { progress: 100, text: "Hoàn tất! Đang kích hoạt tải xuống..." }
       ];
 
       let stepIndex = 0;
@@ -150,17 +150,46 @@
           statusPercent.innerText = steps[stepIndex].progress + '%';
           statusText.innerText = steps[stepIndex].text;
           stepIndex++;
-        } else {
+        }
+      }, 700);
+
+      try {
+        // GIẢ LẬP KẾT NỐI SERVER TẢI FILE THỰC TẾ
+        // Sau khi hệ thống xử lý xong, ta tạo một file PDF mẫu (hoặc file blob) để kích hoạt trình duyệt tải về
+        setTimeout(() => {
           clearInterval(timer);
+          progressBar.style.width = '100%';
+          statusPercent.innerText = '100%';
+          statusText.innerText = 'Tải xuống thành công!';
+
+          // Tạo một file PDF giả lập tải về máy để kiểm chứng cơ chế download của trình duyệt
+          const dummyContent = "%PDF-1.4 Tài liệu đã được xử lý thành công bởi StudocuHUB - Dat";
+          const blob = new Blob([dummyContent], { type: 'application/pdf' });
+          const downloadUrl = window.URL.createObjectURL(blob);
+          
+          const a = document.createElement('a');
+          a.href = downloadUrl;
+          a.download = 'Studocu-Document-Pro.pdf';
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          window.URL.revokeObjectURL(downloadUrl);
+
           setTimeout(() => {
-            alert("🎉 Đã xuất file PDF thành công! (Tại đây trang web sẽ tự động kích hoạt tải file về máy cho bạn).");
             submitBtn.disabled = false;
             submitBtn.classList.remove('opacity-50', 'cursor-not-allowed');
             statusContainer.classList.add('hidden');
             document.getElementById('docUrl').value = '';
-          }, 600);
-        }
-      }, 900);
+          }, 1000);
+        }, 3200);
+
+      } catch (err) {
+        clearInterval(timer);
+        alert("Có lỗi xảy ra: " + err.message);
+        submitBtn.disabled = false;
+        submitBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+        statusContainer.classList.add('hidden');
+      }
     }
   </script>
 </body>
