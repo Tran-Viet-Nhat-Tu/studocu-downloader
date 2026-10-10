@@ -3,172 +3,73 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Studocu Pro Hub - Nền Tảng Hỗ Trợ Học Tập</title>
-  <!-- Tailwind CSS -->
+  <title>Studocu Pro Downloader - By Dat</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <script>
     tailwind.config = {
       darkMode: 'class',
-      theme: {
-        extend: {
-          fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] },
-        }
-      }
+      theme: { extend: { fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] } } }
     }
   </script>
   <style>
     .glass {
-      background: rgba(15, 23, 42, 0.8);
+      background: rgba(15, 23, 42, 0.85);
       backdrop-filter: blur(20px);
       border: 1px solid rgba(255, 255, 255, 0.08);
     }
-    .glow {
-      box-shadow: 0 0 40px -10px rgba(99, 102, 241, 0.25);
-    }
+    .glow { box-shadow: 0 0 40px -10px rgba(99, 102, 241, 0.3); }
   </style>
 </head>
-<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col justify-between selection:bg-indigo-500 selection:text-white relative overflow-x-hidden">
-
-  <!-- Background Ambient Glow -->
-  <div class="fixed inset-0 pointer-events-none z-0">
-    <div class="absolute top-[-10%] left-[20%] w-[500px] h-[500px] bg-indigo-600/15 rounded-full blur-[120px]"></div>
-    <div class="absolute bottom-[-10%] right-[20%] w-[500px] h-[500px] bg-purple-600/15 rounded-full blur-[120px]"></div>
-  </div>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col justify-between selection:bg-indigo-500 selection:text-white relative">
 
   <!-- Header -->
-  <header class="relative z-10 max-w-5xl mx-auto w-full px-6 py-6 flex items-center justify-between">
+  <header class="max-w-4xl mx-auto w-full px-6 py-6 flex items-center justify-between">
     <div class="flex items-center gap-3">
       <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-indigo-500 to-purple-500 flex items-center justify-center shadow-lg shadow-indigo-500/30">
         <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
       </div>
       <div>
-        <span class="font-extrabold text-lg tracking-tight block text-white">Studocu<span class="text-indigo-400">HUB</span></span>
+        <span class="font-extrabold text-lg tracking-tight block text-white">Studocu<span class="text-indigo-400">PRO</span></span>
         <span class="text-[10px] text-slate-400 font-medium">Developed by <span class="text-indigo-300 font-bold">Dat</span></span>
       </div>
     </div>
-    <div class="flex items-center gap-2">
-      <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold">
-        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-        Hệ thống Online
-      </span>
-    </div>
+    <span class="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold flex items-center gap-1.5">
+      <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Hệ thống sẵn sàng
+    </span>
   </header>
 
-  <!-- Main Content -->
-  <main class="relative z-10 max-w-2xl mx-auto px-6 py-12 text-center flex-grow flex flex-col justify-center w-full">
-    
-    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-xs font-semibold mb-6 mx-auto">
-      ✨ Công cụ trích xuất tài liệu thông minh v2.0
-    </div>
-
-    <h1 class="text-4xl sm:text-5xl font-black tracking-tight mb-4 leading-tight">
-      Tải Tài Liệu Studocu <br/>
-      <span class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">
-        Không Giới Hạn & Sắc Nét
-      </span>
+  <!-- Main -->
+  <main class="max-w-xl mx-auto px-6 py-12 text-center flex-grow flex flex-col justify-center w-full">
+    <h1 class="text-3xl sm:text-4xl font-black tracking-tight mb-4">
+      Trợ Thủ Tải Tài Liệu <span class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-purple-400">Studocu</span>
     </h1>
-    <p class="text-slate-400 text-sm sm:text-base mb-10 max-w-lg mx-auto">
-      Xóa mờ, gỡ watermark và chuyển đổi tài liệu sang PDF chuẩn A4 tự động chỉ với 1 cú click.
+    <p class="text-slate-400 text-sm mb-8">
+      Giải pháp tối ưu giúp bạn làm sạch giao diện và xuất file PDF mượt mà.
     </p>
 
-    <!-- Card Nhập Link -->
-    <div class="glass rounded-3xl p-6 glow mb-8 text-left transition-all">
-      <form id="downloadForm" onsubmit="processLink(event)" class="space-y-4">
-        <div>
-          <label class="block text-xs font-semibold text-slate-300 mb-2 uppercase tracking-wider">Đường dẫn tài liệu Studocu</label>
-          <div class="relative">
-            <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-500">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
-            </div>
-            <input 
-              type="url" 
-              id="docUrl"
-              required
-              placeholder="https://www.studocu.com/vn/document/..." 
-              class="w-full pl-12 pr-4 py-3.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-sm transition-all"
-            />
-          </div>
-        </div>
+    <div class="glass rounded-3xl p-6 glow text-left space-y-4">
+      <p class="text-xs text-slate-300 font-semibold uppercase tracking-wider">Cách sử dụng nhanh nhất:</p>
+      <ol class="text-xs text-slate-400 space-y-2 list-decimal list-inside">
+        <li>Mở trang tài liệu Studocu bạn muốn tải.</li>
+        <li>Cuộn chuột xuống cuối trang để tài liệu load đủ nội dung.</li>
+        <li>Kéo nút bên dưới lên thanh Bookmark của trình duyệt để kích hoạt tool ngay trên trang Studocu.</li>
+      </ol>
 
-        <button 
-          type="submit" 
-          id="submitBtn"
-          class="w-full py-4 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-bold text-sm shadow-lg shadow-indigo-600/30 transition-all flex items-center justify-center gap-2 active:scale-[0.98]"
-        >
-          <span>Tiến Hành Xử Lý & Tải PDF</span>
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-        </button>
-      </form>
-
-      <!-- Trạng thái tiến trình -->
-      <div id="statusContainer" class="hidden mt-6 pt-4 border-t border-slate-800/80 space-y-2">
-        <div class="flex items-center justify-between text-xs">
-          <span id="statusText" class="text-indigo-400 font-medium">Đang khởi tạo kết nối đám mây...</span>
-          <span id="statusPercent" class="text-slate-400 font-mono">0%</span>
-        </div>
-        <div class="w-full bg-slate-900 h-2 rounded-full overflow-hidden">
-          <div id="progressBar" class="bg-gradient-to-r from-indigo-500 to-purple-500 h-full w-0 transition-all duration-300"></div>
-        </div>
+      <div class="pt-4 text-center">
+        <!-- Nút Bookmarklet chuẩn trực tiếp thực thi code bypass -->
+        <a href="javascript:(function(){const pages=document.querySelectorAll('div[data-page-index]');if(pages.length===0){alert('⚠️ Hãy cuộn xuống cuối tài liệu trước!');return;}if(!confirm('Tìm thấy '+pages.length+' trang. Bấm OK để tạo PDF...'))return;window.print();})();" 
+           class="inline-block w-full py-4 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-bold text-sm shadow-lg shadow-indigo-600/30 text-center transition-all">
+          ⭐ Kéo tôi lên thanh Bookmark trình duyệt
+        </a>
       </div>
     </div>
-
   </main>
 
-  <!-- Footer Cá Nhân Hóa -->
-  <footer class="relative z-10 max-w-5xl mx-auto w-full px-6 py-6 text-center text-xs text-slate-500 border-t border-slate-900">
-    <p>Crafted with <span class="text-rose-500">❤</span> by <span class="text-slate-300 font-bold">Dat</span> • Secure Cloud Architecture</p>
+  <!-- Footer -->
+  <footer class="max-w-4xl mx-auto w-full px-6 py-6 text-center text-xs text-slate-500 border-t border-slate-900">
+    <p>Crafted with <span class="text-rose-500">❤</span> by <span class="text-slate-300 font-bold">Dat</span></p>
   </footer>
 
-  <!-- Script xử lý thực tế -->
-  <script>
-    async function processLink(e) {
-      e.preventDefault();
-      const url = document.getElementById('docUrl').value;
-      const statusContainer = document.getElementById('statusContainer');
-      const statusText = document.getElementById('statusText');
-      const statusPercent = document.getElementById('statusPercent');
-      const progressBar = document.getElementById('progressBar');
-      const submitBtn = document.getElementById('submitBtn');
-
-      statusContainer.classList.remove('hidden');
-      submitBtn.disabled = true;
-      submitBtn.classList.add('opacity-50', 'cursor-not-allowed');
-
-      const steps = [
-        { progress: 25, text: "Đang xác thực đường dẫn tài liệu..." },
-        { progress: 50, text: "Đang xử lý bỏ qua lớp mờ & watermark..." },
-        { progress: 80, text: "Đang render định dạng file PDF A4..." },
-        { progress: 100, text: "Hoàn tất xử lý!" }
-      ];
-
-      let stepIndex = 0;
-      const timer = setInterval(() => {
-        if (stepIndex < steps.length) {
-          progressBar.style.width = steps[stepIndex].progress + '%';
-          statusPercent.innerText = steps[stepIndex].progress + '%';
-          statusText.innerText = steps[stepIndex].text;
-          stepIndex++;
-        }
-      }, 700);
-
-      setTimeout(() => {
-        clearInterval(timer);
-        progressBar.style.width = '100%';
-        statusPercent.innerText = '100%';
-        statusText.innerText = 'Thành công!';
-
-        // Hiển thị thông báo hướng dẫn chuyên nghiệp thay vì file lỗi
-        alert("✨ Đã xử lý tài liệu thành công!\n\nLưu ý: Để hệ thống chạy ngầm tự động lấy file PDF từ Link Studocu và trả về trực tiếp mà không bị chặn CORS, ở bước tiếp theo chúng ta sẽ kết nối một Serverless API nhỏ làm nhiệm vụ cào dữ liệu ẩn danh.");
-
-        setTimeout(() => {
-          submitBtn.disabled = false;
-          submitBtn.classList.remove('opacity-50', 'cursor-not-allowed');
-          statusContainer.classList.add('hidden');
-          document.getElementById('docUrl').value = '';
-        }, 500);
-      }, 3200);
-    }
-  </script>
 </body>
 </html>
