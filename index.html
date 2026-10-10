@@ -49,17 +49,17 @@
     </p>
 
     <div class="glass rounded-3xl p-6 glow text-left space-y-4">
-      <p class="text-xs text-slate-300 font-semibold uppercase tracking-wider">Cách sử dụng nhanh nhất:</p>
+      <p class="text-xs text-slate-300 font-semibold uppercase tracking-wider">Cách sử dụng siêu đơn giản:</p>
       <ol class="text-xs text-slate-400 space-y-2 list-decimal list-inside">
-        <li>Mở trang tài liệu Studocu bạn muốn tải.</li>
-        <li>Cuộn chuột xuống cuối trang để tài liệu load đủ nội dung.</li>
-        <li>Kéo nút bên dưới lên thanh Bookmark của trình duyệt để kích hoạt tool ngay trên trang Studocu.</li>
+        <li>Mở trang tài liệu Studocu cần tải.</li>
+        <li>Kéo nút màu tím bên dưới lên thanh Bookmark (dấu trang) của trình duyệt.</li>
+        <li>Click vào nút trên thanh Bookmark khi đang ở trang Studocu, tool sẽ tự động cuộn load toàn bộ và bật bảng lưu PDF!</li>
       </ol>
 
       <div class="pt-4 text-center">
-        <!-- Nút Bookmarklet chuẩn trực tiếp thực thi code bypass -->
-        <a href="javascript:(function(){const pages=document.querySelectorAll('div[data-page-index]');if(pages.length===0){alert('⚠️ Hãy cuộn xuống cuối tài liệu trước!');return;}if(!confirm('Tìm thấy '+pages.length+' trang. Bấm OK để tạo PDF...'))return;window.print();})();" 
-           class="inline-block w-full py-4 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-bold text-sm shadow-lg shadow-indigo-600/30 text-center transition-all">
+        <!-- Bookmarklet tự động cuộn và gom trang thông minh -->
+        <a href="javascript:(function(){alert('⚡ Đang tự động cuộn trang để tải toàn bộ tài liệu, vui lòng đợi trong giây lát...');let totalHeight=0;let distance=500;let timer=setInterval(()=>{window.scrollBy(0,distance);totalHeight+=distance;if(totalHeight>=document.body.scrollHeight){clearInterval(timer);setTimeout(()=>{window.scrollTo(0,0);const pages=document.querySelectorAll('div[data-page-index]');if(pages.length===0){alert('⚠️ Không tìm thấy trang tài liệu nào!');return;}if(confirm('🎉 Đã tải xong '+pages.length+' trang.\nBấm OK để mở giao diện lưu PDF!')){window.print();}},1000);}},200);})();" 
+           class="inline-block w-full py-4 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-bold text-sm shadow-lg shadow-indigo-600/30 text-center transition-all cursor-grab">
           ⭐ Kéo tôi lên thanh Bookmark trình duyệt
         </a>
       </div>
